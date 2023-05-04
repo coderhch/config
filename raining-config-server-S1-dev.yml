@@ -1,0 +1,8 @@
+server:
+  port: 30000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:20000/eureka/
+    proxy-password: 123456
+    proxy-user-name: hechunhui
