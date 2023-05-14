@@ -1,0 +1,25 @@
+server:
+  port: 10001
+spring:
+  datasource:
+    # 拆分数据源到独立database instance，或者独立schema
+    #    url: jdbc:mysql://localhost:3306/foodie-cloud-item?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    url: jdbc:mysql://rm-gw0t3u89a6l84a8a71o.mysql.cn-chengdu.rds.aliyuncs.com:3306/raining?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    password: HeChunHui520@@
+
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.raining.dao
+  mapper-locations: classpath:mapper/*.xml
+
+## 开启所有actuator-endpoint
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
